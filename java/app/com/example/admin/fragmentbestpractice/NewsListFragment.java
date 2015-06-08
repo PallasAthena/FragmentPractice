@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -27,6 +28,7 @@ public class NewsListFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.news_title_item,newsTitleList);
         ListView list = (ListView)view.findViewById(R.id.news_listview);
         list.setAdapter(adapter);
+        list.setOnItemClickListener(new NewsClick());
         return view;
     }
 
@@ -94,6 +96,19 @@ public class NewsListFragment extends Fragment {
                 "The passage of the USA Freedom Act means several changes are in store, particularly for that NSA program. Obama and a cross-section of Republican and Democratic lawmakers supported the legislation.");
         newsList.add(news);
         newsTitleList.add(news.getTitle());
+
+    }
+
+    class NewsClick implements AdapterView.OnItemClickListener {
+
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+            int p = position;
+            String newsTitle;
+            String newsDetail;
+            newsTitle = newsList.get(p).getTitle();
+            newsDetail=newsList.get(p).getContent();
+
+        }
 
     }
 

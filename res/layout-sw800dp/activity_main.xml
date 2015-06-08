@@ -11,4 +11,16 @@
         android:name="app.com.example.admin.fragmentbestpractice.NewsListFragment">
     </fragment>
 
+    <FrameLayout android:id="@+id/newsContent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="app.com.example.admin.fragmentbestpractice.NewsContentFragment">
+        </fragment>
+    </FrameLayout>>
+
+
 </LinearLayout>
